@@ -260,6 +260,9 @@ int main(int argc, char** argv)
 			printf("Frames' path: %s\n", frames_path);
 			const char* frames_path_const = frames_path;
 			
+			/*Every time enter a directory, initialize previous_file and current_file*/
+			previous_file = "";
+			current_file = "";
 			/*Read the name of every two frames*/
 			if ((NULL == (FD_SUB_SUB=opendir(frames_path_const))))
 			{
@@ -275,7 +278,7 @@ int main(int argc, char** argv)
 				}	
 				
 				current_file = current_file_ent->d_name;
-				if (previous_file == NULL)
+				if (!strcmp(previous_file, ""))
 				{
 					previous_file = current_file;
 					continue;
