@@ -1,6 +1,7 @@
 import os, os.path
 import glob
 
+#target file to contain the number of frames of each video
 count_file = open('flow_frame_num.txt', 'w')
 
 data_dir = '/data3/wangyf/dataset/ucf101/ucf101_of_matlab/'
