@@ -1,6 +1,7 @@
 import os
 import glob
 
+
 directorys = os.listdir()
 for directory in directorys:
 	if os.path.isdir(directory):
